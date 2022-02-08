@@ -1,0 +1,77 @@
+COURS 1 
+
+JS crée par 1995 par Brendan Eich
+Pillier du WWW (web)
+
+JS --> coté client de base (c'est un script)
+Maintenant ca sert aussi pour les serveurs dansles applications cross-plateform IOS/android
+
+Ajout de dynamisme sur les pages web
+Serveur JS avec nodeJs
+
+Bases : 
+
+
+ manières de déclarer une variable : var / let / const
+    const --> constante !!!  A ECRIRE EN MAJUSCULE
+    var / let --> pas se servir de var 
+        var = variables globales
+        let restreint par un bloc de code
+ 
+ Pas de typage
+
+
+<script src=""></script>
+Faire un max de fichier != , ne rien mettre dans l'HTML
+Un fichier const.js / main.js (toujours a include en dernier)
+
+function nom_function(param) --> toujours aucun typage
+Commentaires à mettre pour documenter (algo)
+
+if (t === j) --> triple = pour voir si t et j sont du même type et même valeur
+
+f12 console.log --> fonction de debug // affiche les infos d'une variable
+ne pas utiliser alert pour debug
+
+function displayMessageFromArray(array) {
+    if(!Array.is_array(array)) {
+        console.log('pas array')        --> utiliser au plus les simples quotes
+        return;
+    }
+
+    array.foreach(element => logMessageConsole(element));
+    
+    array.foreach(function(element) {                           --> les deux fonctions sont pareilles
+        logMessageConsole(element);                             --> fonction lambda
+    });
+}
+
+COURS 2 
+
+DOM = document object model
+
+h1 --> un seul dans la page HTML
+h1 / div / article etc...
+let tag = document.querySelector('tag') --> recupère un seul élément
+let tags = document.querySelectorAll('tag') --> recupère tout les éléments
+
+let tags = document.querySelector('.classh1') --> recupère tout les éléments
+let tags = document.querySelectorAll('#idh1') --> recupère un seul élément
+id unique 
+
+let tags = document.querySelectorAll(#idh1 article.test) --> dans le parent avec id idh1, on récupère les article avec la class test
+
+On peut les récupérer par les classes (.classh1) ou les id (#idh1)
+
+
+
+
+
+
+
+
+
+
+
+
+
