@@ -1,14 +1,17 @@
 function bindButton(button) {
     button.onclick = function(event) {
         event.preventDefault();
+
         let champ = document.querySelector('input[name="titleToAdd"]');
+        let text = document.querySelector('.inputDescription');
 
         article = new Article(setId() + 1, champ.value, setDescription());
+
         if (article.addArticle(champ.value)) {
             champ.value = '';
-            logMessage("Mon article créer " + article.id + ' ' + article.titre + article.description);
+            text.value = '';
+            logMessage("Mon article créer " + article.id + ' ' + article.titre + ' ' + article.description);
         }
-
         return false;
     }
 }
@@ -17,10 +20,11 @@ function bindButton(button) {
  * Show that clicking on the article button do something
  * @param {*} btnArticle 
  */
-function bindButtonArticle(btnArticle) {
+function bindButtonArticle(btnArticle, i) {
     btnArticle.onclick = function(e) {
         e.preventDefault();
-        logMessage('Clic sur le boutton de l\'article');
+        desc = document.querySelector('#article-' + i + ' p').innerHTML;
+        logMessage(desc);
         return false;
     }
 }
@@ -38,7 +42,7 @@ function bouttonArticleNb() {
 
     for (i = 1; i <= nbElmt; i++) {
         let btnArticle = document.querySelector('#article-' + i);
-        bindButtonArticle(btnArticle);
+        bindButtonArticle(btnArticle, i);
     }
     return nbElmt;
 }
@@ -99,9 +103,12 @@ function addInput() {
     input.type = 'text';
     input.style.width = '30%';
     input.placeholder = "Entrez une description";
-    input.required;
+    input.required = "required";
 
     let setterInput = document.querySelector('input[type=submit]');
     setterInput.before(input);
+
+    let champ = document.querySelector('input[name="titleToAdd"]');
+    champ.required = "required";
 
 }
