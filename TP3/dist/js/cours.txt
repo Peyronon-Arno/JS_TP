@@ -1,0 +1,104 @@
+Jquery : 
+
+Bibliothèque / framework front-end
+Facilite : 
+- parcours de la dom
+- mise en place animations
+- mise en place d'appels ajax
+
+Jquery est une fonction accessible via $
+
+Installation via CDN : https://code.jquery/com/     CDN = systeme de cache qui va fournir les versions des lib externes
+
+En local :
+- téléchargement à la main (pas fou)
+- via un gestionnaire de dépendances (mieux)
+
+<script src="https://code.jquery/com/jquery-3.5.1.min.js"> </script>
+
+PARCOURS DE DOM :
+
+Récupérer un élément     : $('selector');
+Accéder à un attribut   : $('selector').attr('name');           = getter
+Modifier un attribut    : $('selector').attr('name','value');   = setter
+
+Attributs :
+
+Raccourci équivalent : $('selector').attr('name','value')  ~=  $('selector').val()
+
+Tester la présence d'un élément : 
+$('selector').length > 0
+$('selector') !== undifined
+
+let h1 = $('h1');
+if(h1.length >1) {
+    let lastH1 = $('h1:last');
+    lastH1.remove();
+}
+
+h1.html() == innerHTML
+
+Créer un élément Jquery : $('<tag></tag>'); --> A eviter quoi c'est pas fou : createElement('tag')
+
+querySelector(All) renvoie un nodeElement
+
+
+AJAX : Appel HTTP sans rechargement de page (Asynchronous JavaScript and XML)
+
+
+
+$.ajax({
+
+    url: "http://api.plos.org/search?q=title:DNA",
+    method : "GET"
+
+    })
+    .done(function(data, textStatus, xhr) {
+
+        console.log('done');
+        if(whr.status >= 300 && xhr.status < 400) {
+            console.log('redirection en cours');
+        }
+        console.log (xhr);
+        console.log (xhr.status);
+        console.log (textStatus);
+        console.log (data);
+        console.log (data.response.docs);
+        
+    })
+    .fail(function(xhr, textStatus, error) {
+        console.log('fail');
+        console.log(xhr.status);
+        console.log(textStatus);
+        throw new Error(error);
+
+    });
+
+method : 
+POST --> ajouter
+GET --> Récupérer
+PUT --> Modifier
+DELETE --> Supprimer
+PATCH --> Modifier partiellement 
+
+done --> ca a bien marché   code de retour : 3XX
+fail --> ca a pas marché    code de retour : 4XX / 5XX
+
+100 info
+200 ok
+300 ok + redirection
+400 erreur client
+500 erreur serveur
+
+
+Pour le tp :
+
+Tout ce qui est document.querySelector --> ctrl + maj + f --> $ entrée
+Pour les ajax prendre le content
+
+Système d'onglet :
+
+Voir les articles afficher qu eles news
+Ajouter un articlz affiche que le formulaire
+
+On peut soit a la main soit utiliser pluggin jquery mais si ca marche pas le prof regarde pas le code
