@@ -18,7 +18,7 @@ class Article {
         let h3 = document.createElement('h3');
         let p = document.createElement('p');
         let button = document.createElement('button');
-        let news = document.querySelector('#news');
+        let news = $('#news');
 
         h3.innerHTML = this.title;
         p.innerHTML = this.description;

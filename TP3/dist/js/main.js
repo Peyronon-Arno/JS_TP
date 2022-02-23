@@ -1,23 +1,25 @@
 iterate();
 
-let h1 = document.querySelector('h1');
+let h1 = $('h1');
 logMessageWithDate(h1.innerHTML);
 
-let titleNews = document.querySelector('#titleNews');
+let titleNews = $('#titleNews');
 logMessageWithDate(titleNews.innerHTML);
 
-let titles = $('.title');
-titles.forEach(element => logMessageWithDate(element.innerHTML));
+$('.title').each(function() {
+    console.log(this)
+});
 
-let button = document.querySelector('input[name="addNewsBtn"]');
+
+let button = $('input[name="addNewsBtn"]');
 bindButton(button);
 
-let buttons = $('article button');
-buttons.forEach(function(element) {
+// let buttons = $('article button');
+$('article button').each(function(element) {
     element.onclick = viewdetailClick;
 });
 
-let articles = JSON.parse(ALLNEWSJSON);
+let articles = JSON.parse(ALLNEWJSON);
 articles.forEach(function(element) {
     console.log(element);
 
@@ -26,7 +28,7 @@ articles.forEach(function(element) {
         a.insertArticleHtml();
     } catch (e) {
         clearErrors();
-        let form = document.querySelector('#addNewsForm');
+        let form = $('#addNewsForm');
 
         if (e instanceof RequiredPropertyError || e instanceof DuplicateArticleError) {
             addError(e.message, form);

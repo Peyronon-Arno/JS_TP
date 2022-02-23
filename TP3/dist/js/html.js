@@ -1,8 +1,8 @@
 function bindButton(button) {
     button.onclick = function(event) {
         event.preventDefault();
-        let title = document.querySelector('input[name="titleToAdd"]');
-        let description = document.querySelector('textarea[name="descriptionToAdd"]');
+        let title = $('input[name="titleToAdd"]');
+        let description = $('textarea[name="descriptionToAdd"]');
 
         let article = new Article(0, title.value, description.value);
         try {
@@ -12,7 +12,7 @@ function bindButton(button) {
             }
         } catch (e) {
             clearErrors();
-            let form = document.querySelector('#addNewsForm');
+            let form = $('#addNewsForm');
 
             if (e instanceof RequiredPropertyError || e instanceof DuplicateArticleError) {
                 addError(e.message, form);
