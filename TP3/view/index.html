@@ -6,7 +6,7 @@ de description Téléchargement autorisé pour les lecteurs
 <head>
     <meta charset="utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../dist/css/style.css">
     <title>News</title>
 </head>
 
@@ -14,38 +14,51 @@ de description Téléchargement autorisé pour les lecteurs
 
     <h1> TP1 JS </h1>
 
-    <section id="news">
-        <h2 id="titleNews"></h2>
-        <article id="article-1">
-            <h3 class="title">News 1</h3>
-            <p>Ma super news 1</p>
-            <button class="viewDetail">View detail</button>
-        </article>
+    <ul class="tab-nav">
+        <li>
+            <a href="#" data-tab="onglet1" class="tab-nav-active">Article & recherche</a></li>
+        <li>
+            <a href="#" data-tab="onglet2">Ajouter un article</a></li>
+    </ul>
 
-        <article id="article-2">
-            <h3 class="title">News 2</h3>
-            <p>Ma super news 2</p>
-            <button>View detail</button>
-        </article>
+    <div id="onglet1" class="tab tab-active">
 
-        <article id="article-3">
-            <h3 class="title">News 3</h3>
-            <p>Ma super news 3</p>
-            <button>View detail</button>
-        </article>
-    </section>
+        <section id="news">
+            <h2 id="titleNews"></h2>
+            <article id="article-1">
+                <h3 class="title">News 1</h3>
+                <p>Ma super news 1</p>
+                <button class="viewDetail">View detail</button>
+            </article>
 
-    <form id="addNewsForm">
-        <fieldset>
-            <label>Nom de la news* :</label><br/>
-            <input name="titleToAdd" type="text" /><br/>
+            <article id="article-2">
+                <h3 class="title">News 2</h3>
+                <p>Ma super news 2</p>
+                <button>View detail</button>
+            </article>
 
-            <label>Description de la news* :</label><br/>
-            <textarea name="descriptionToAdd"></textarea><br/>
+            <article id="article-3">
+                <h3 class="title">News 3</h3>
+                <p>Ma super news 3</p>
+                <button>View detail</button>
+            </article>
+        </section>
+    </div>
 
-            <input type="submit" name="addNewsBtn" />
-        </fieldset>
-    </form>
+    <div id="onglet2" class="tab">
+        <form id="addNewsForm">
+            <fieldset>
+                <label>Nom de la news* :</label><br/>
+                <input name="titleToAdd" type="text" /><br/>
+
+                <label>Description de la news* :</label><br/>
+                <textarea name="descriptionToAdd"></textarea><br/>
+
+                <input type="submit" name="addNewsBtn" />
+            </fieldset>
+        </form>
+    </div>
+
 </body>
 
 <script src="../dist/js/duplicatearticleerror.js"></script>
@@ -55,6 +68,7 @@ de description Téléchargement autorisé pour les lecteurs
 <script src="../dist/js/const.js"></script>
 <script src="../dist/js/log.js"></script>
 <script src="../dist/js/html.js"></script>
+<script src="../dist/js/onglet.js"></script>
 
 <script src="../dist/js/math.js"></script>
 
