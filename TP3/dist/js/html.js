@@ -46,6 +46,6 @@ function addError(message, parent) {
 }
 
 function viewdetailClick() {
-    let p = this.$('p');
-    logMessageWithDate(p.html());
+    let p = $(this).parent()[0].querySelector('p');
+    logMessageWithDate(p.innerHTML);
 }

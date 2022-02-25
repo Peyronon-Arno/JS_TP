@@ -14,7 +14,7 @@ logMessageWithDate($('#titleNews').html());
  * Log tout les titles
  */
 $('.title').each(function() {
-    console.log(this)
+    console.log($(this).html())
 });
 
 
@@ -24,13 +24,12 @@ bindButton(button);
 /**
  * Quand le boutton view detail est cliqué on affiche la description
  */
-$(document).ready(function() {
-    $('article button').click(function() {
-        viewdetailClick();
-    })
+let buttons = $('article button');
+buttons.each(function() {
+    $(this).click(viewdetailClick);
 });
 
-/*let articles = JSON.parse(ALLNEWJSON);
+let articles = JSON.parse(ALLNEWJSON);
 articles.forEach(function(element) {
     console.log(element);
 
@@ -48,31 +47,4 @@ articles.forEach(function(element) {
             console.error(e);
         }
     }
-});*/
-
-/*
-$.ajax({
-        url: "https://newsdata.io/api/1/news?apikey=pub_4627365ed0e1d1c0536016b89a969e1275ef&language=fr&category=technology",
-        method: "GET"
-
-    })
-    .done(function(data, textStatus, xhr) {
-
-        logMessageWithDate('done');
-        if (xhr.status >= 300 && xhr.status < 400) {
-            logMessageWithDate('redirection en cours');
-        }
-        logMessageWithDate(xhr);
-        logMessageWithDate(xhr.status);
-        logMessageWithDate(textStatus);
-        logMessageWithDate(data);
-        logMessageWithDate(data.response);
-
-    })
-    .fail(function(xhr, textStatus, error) {
-        logMessageWithDate('fail');
-        logMessageWithDate(xhr.status);
-        logMessageWithDate(textStatus);
-        throw new Error(error);
-
-    });*/
+});
