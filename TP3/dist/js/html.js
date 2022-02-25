@@ -6,6 +6,7 @@ function bindButton(button) {
 
         let article = new Article(0, title.value, description.value);
         try {
+            logMessageWithDate(title.value + ' ' + description.value);
             if (article.insertArticleHtml()) {
                 title.value = '';
                 description.value = '';
@@ -21,7 +22,6 @@ function bindButton(button) {
                 console.error(e);
             }
         }
-
         return false;
     };
 }
@@ -46,7 +46,6 @@ function addError(message, parent) {
 }
 
 function viewdetailClick() {
-    let p = this.parentNode.querySelector('p');
-
-    logMessageWithDate(p.innerHTML);
+    let p = this.$('p');
+    logMessageWithDate(p.html());
 }

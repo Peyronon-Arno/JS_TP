@@ -1,10 +1,18 @@
 iterate();
 
-
+/**
+ * Log le h1
+ */
 logMessageWithDate($('h1').html());
+
+/**
+ * Log le h2
+ */
 logMessageWithDate($('#titleNews').html());
 
-
+/**
+ * Log tout les titles
+ */
 $('.title').each(function() {
     console.log(this)
 });
@@ -13,8 +21,13 @@ $('.title').each(function() {
 let button = $('input[name="addNewsBtn"]');
 bindButton(button);
 
-$('article button').each(function(element) {
-    element.onclick = viewdetailClick;
+/**
+ * Quand le boutton view detail est cliqué on affiche la description
+ */
+$(document).ready(function() {
+    $('article button').click(function() {
+        viewdetailClick();
+    })
 });
 
 /*let articles = JSON.parse(ALLNEWJSON);
@@ -45,21 +58,21 @@ $.ajax({
     })
     .done(function(data, textStatus, xhr) {
 
-        console.log('done');
+        logMessageWithDate('done');
         if (xhr.status >= 300 && xhr.status < 400) {
-            console.log('redirection en cours');
+            logMessageWithDate('redirection en cours');
         }
-        console.log(xhr);
-        console.log(xhr.status);
-        console.log(textStatus);
-        console.log(data);
-        console.log(data.response.docs);
+        logMessageWithDate(xhr);
+        logMessageWithDate(xhr.status);
+        logMessageWithDate(textStatus);
+        logMessageWithDate(data);
+        logMessageWithDate(data.response);
 
     })
     .fail(function(xhr, textStatus, error) {
-        console.log('fail');
-        console.log(xhr.status);
-        console.log(textStatus);
+        logMessageWithDate('fail');
+        logMessageWithDate(xhr.status);
+        logMessageWithDate(textStatus);
         throw new Error(error);
 
     });*/
