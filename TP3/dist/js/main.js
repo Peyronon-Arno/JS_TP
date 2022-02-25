@@ -18,7 +18,7 @@ $('.title').each(function() {
 });
 
 
-let button = $('input[name="addNewsBtn"]');
+let button = $('input[name="addNewsBtn"]')[0];
 bindButton(button);
 
 /**

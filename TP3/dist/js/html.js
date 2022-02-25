@@ -1,10 +1,20 @@
+function nbArticleByButton() {
+    let elt = $('[id^="article-"]');
+    let nbElt = 0;
+
+    elt.each(function() {
+        nbElt = nbElt + 1;
+    });
+    return nbElt + 1;
+}
+
 function bindButton(button) {
     button.onclick = function(event) {
         event.preventDefault();
-        let title = $('input[name="titleToAdd"]');
-        let description = $('textarea[name="descriptionToAdd"]');
-
-        let article = new Article(0, title.value, description.value);
+        let title = $('input[name="titleToAdd"]')[0];
+        let description = $('textarea[name="descriptionToAdd"]')[0];
+        let idElm = nbArticleByButton();
+        let article = new Article(idElm, title.value, description.value);
         try {
             logMessageWithDate(title.value + ' ' + description.value);
             if (article.insertArticleHtml()) {
@@ -13,7 +23,7 @@ function bindButton(button) {
             }
         } catch (e) {
             clearErrors();
-            let form = $('#addNewsForm');
+            let form = $('#addNewsForm')[0];
 
             if (e instanceof RequiredPropertyError || e instanceof DuplicateArticleError) {
                 addError(e.message, form);
