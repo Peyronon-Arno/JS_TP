@@ -1,0 +1,7 @@
+La fonction data permet de retourner des variables 
+Etant donné que notre {{ title }} est située dans un h1, il n'y aura que la dedans que notre "TP5 JS" va marcher
+
+Les computed sont pas accessible depuis les data
+@submit, quand on a un evenement submit on appelle la méthode
+v-model --> on affecte en lecture et en ecriture à une variable que l'on retrouve dans data 
+
