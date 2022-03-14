@@ -1,5 +1,3 @@
-index.html Qui a accès Propriétés système Type HTML Taille 2 Ko Espace de stockage utilisé 3 Ko Emplacement view Propriétaire Alexandre Ruiz Date de modification 8 mars 2022 par Alexandre Ruiz Date de création 7 mars 2022 Pas de description Téléchargement
-autorisé pour les lecteurs
 <!doctype html>
 <html>
 
@@ -18,6 +16,10 @@ autorisé pour les lecteurs
         form {
             margin-top: 20px;
         }
+        
+        .button-counter {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 
@@ -29,7 +31,7 @@ autorisé pour les lecteurs
             {{ getNbArticles }} article(s)
         </h2>
 
-        <article v-if="getNbArticles" v-for="article in articles">
+        <article v-for="article in articles">
             <h3 class="title">{{ article.title }}</h3>
             <button @click="viewDetailArticle(article)">View detail</button>
         </article>
@@ -48,16 +50,19 @@ autorisé pour les lecteurs
     </section>
 
     <section id="click">
-        <button @click="increment">
+        <button-counter btn-title="Decrement"></button-counter>
+        <button-counter btn-title="Réduire"></button-counter>
+
+        <!-- <button @click="increment">
             {{ counter }} click
         </button>
         <button @click="decrement">
             Decrement
-        </button>
+        </button> -->
     </section>
 </body>
 
-<script src="../dist/js/const.js"></script>
-<script src="../dist/js/main.js"></script>
+<script src="/dist/js/const.js"></script>
+<script src="/dist/js/main.js" type="module"></script>
 
 </html>
