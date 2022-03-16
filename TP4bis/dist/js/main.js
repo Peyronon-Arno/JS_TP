@@ -62,11 +62,17 @@ Vue.createApp({
 
             //this.titleToAdd équivalent de this.titleToAdd !== null
             if (this.titleToAdd && this.titleToAdd !== '' && this.titleToAdd !== DEFAULTTITLE) {
-                this.articles.push({ title: this.titleToAdd, description: this.descriptionToAdd });
-                this.titleToAdd = DEFAULTTITLE;
-                this.descriptionToAdd = null;
-                this.colorMessage = 'green';
-                this.errorMessage = 'Ajout réussi !';
+                if (this.descriptionToAdd !== '' && this.descriptionToAdd !== null) {
+                    this.articles.push({ title: this.titleToAdd, description: this.descriptionToAdd });
+                    this.titleToAdd = DEFAULTTITLE;
+                    this.descriptionToAdd = null;
+                    this.colorMessage = 'green';
+                    this.errorMessage = 'Ajout réussi !';
+                } else {
+                    this.errorMessage = 'La description doit être renseignée';
+                    this.colorMessage = 'red';
+
+                }
             } else {
                 this.errorMessage = 'Le titre doit être renseigné';
                 this.colorMessage = 'red';
