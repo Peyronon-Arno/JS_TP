@@ -1,3 +1,15 @@
+import ArticleNews from '/view/components/ArticleNews.js'
+
+Vue.createApp({
+    data() {
+        return {
+            title: 'TP4 JS'
+        }
+    }
+}).mount('h1');
+
+Vue.createApp({}).component('ArticleNews', ArticleNews).mount('#app');
+/*
 //remplacer le code ci-dessous par le chargement en VueJS
 let button = document.querySelector('input[name="addNewsBtn"]');
 bindButton(button);
@@ -98,4 +110,4 @@ Vue.createApp({
 //                 this.counter--;
 //         }
 //     }
-// }).mount('#click');
+// }).mount('#click');*/
