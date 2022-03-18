@@ -1,5 +1,4 @@
-import ArticleNews from '/view/components/ArticleNews.js'
-
+import ArticleNews from '../../view/components/ArticlesNews.js';
 Vue.createApp({
     data() {
         return {
