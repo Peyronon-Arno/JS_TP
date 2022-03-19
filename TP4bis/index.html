@@ -14,7 +14,7 @@
     <div id="app">
         <section id="news" @deleteNew="deleteNew($event)" v-if="getNbArticles">
             <h2 id="titleNews" class="text-center"> {{getNbArticles}} </h2>
-            <article-news :articles="articles" :description="article.description" :id="article.id" :index="index" :title="article.title" v-for="(article,index) in articles" v-on:remove="articles.splice(index,1)">
+            <article-news :articles="articles" :description="article.description" :index="index" :title="article.title" v-for="(article,index) in articles" v-on:remove="articles.splice(index,1)">
             </article-news>
         </section>
 

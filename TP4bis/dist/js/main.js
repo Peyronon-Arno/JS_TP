@@ -2,7 +2,7 @@ import ArticleNews from '../../view/components/ArticlesNews.js';
 Vue.createApp({
     data() {
         return {
-            title: 'TP4 JS'
+            title: 'TP4 JS ARNO PEYRONON A3'
         }
     }
 }).mount('h1');
@@ -33,12 +33,10 @@ Vue.createApp({
         getArticles() {
             return JSON.parse(ALLNEWSJSON);
         },
-
         deleteNew() {
             let index = this.articles.indexOf(article);
             this.articles.splice(index, 1);
         },
-
         addArticle: function(event) {
             event.preventDefault();
 
@@ -50,7 +48,6 @@ Vue.createApp({
                 console.log(this.articles.length);
                 if (this.titleToAdd !== '' && this.titleToAdd !== DEFAULTTITLE && this.descriptionToAdd !== null && this.descriptionToAdd !== '') {
                     console.log('Ajout');
-                    // this.articles.push({ title: this.titleToAdd, description: this.descriptionToAdd });
                     let art = new Article(this.titleToAdd, this.descriptionToAdd);
                     this.articles.push(art);
                     this.titleToAdd = null;
@@ -75,5 +72,3 @@ Vue.createApp({
         }
     }
 }).component('ArticleNews', ArticleNews).mount('#app');
-/*
-Vue.createApp({}).component('ArticleNews', ArticleNews).mount('#app')*/
