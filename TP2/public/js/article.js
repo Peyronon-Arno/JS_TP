@@ -1,5 +1,5 @@
 class Article {
-
+    //Attribut de classe 
     id;
     titre;
     description;
