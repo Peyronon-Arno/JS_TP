@@ -1,2 +1,2 @@
 # JS_TP
-Javascript / VueJS work for the 2nd year of UCA diplomas Clermon-Ferrand
+School Work using Javascript and VueJs for the 2nd year diplomas UCA Clermont-Ferrand
